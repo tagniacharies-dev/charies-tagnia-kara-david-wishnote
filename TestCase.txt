@@ -1,0 +1,42 @@
+Kara David's Wish Note Web App — Test Cases
+
+TC-01: Open the web application
+Steps:
+1. Start the local PHP web server and database service as instructed in the lesson.
+2. Open the application in a browser.
+Expected result:
+The Wish Note form loads without a PHP or database error.
+
+TC-02: Submit a complete valid wish note
+Steps:
+1. Enter a name, wish note, and location in the form.
+2. Submit the form.
+Expected result:
+The app displays an appropriate success message and the record is saved in the database, including the Location value.
+
+TC-03: Verify the Location column
+Steps:
+1. Submit a wish note with a distinctive location such as "Bacolod City".
+2. Check the corresponding row in the main_corrupt_politicians table.
+Expected result:
+The Location column contains "Bacolod City" for the submitted record.
+
+TC-04: Submit a form with a required field missing
+Steps:
+1. Leave a required field blank.
+2. Submit the form.
+Expected result:
+The application shows validation feedback and does not save an invalid record.
+
+TC-05: Check database insert behavior
+Steps:
+1. Submit a valid form.
+2. Inspect the PHP INSERT statement and its bound parameters.
+Expected result:
+The INSERT column list, placeholders, and bind_param values match in number and order, including Location.
+
+TC-06: Check error handling
+Steps:
+1. Test with the database service stopped or incorrect database configuration in a safe local test environment.
+Expected result:
+The application handles the database failure without exposing sensitive configuration details to the user.
